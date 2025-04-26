@@ -49,11 +49,16 @@ nav a:hover {
 
 /* Hero */
 .hero {
-    background: url('tu-imagen.jpg') no-repeat center center/cover;
-    color: white;
+    background: url('fondo1.PNG') no-repeat center center/cover;
+    color: rgb(255, 255, 255);
     text-align: center;
     padding: 100px 20px;
     background-color: #edcfec; /* fallback */
+    text-shadow: 
+        -1px -1px 0 #000,  
+         1px -1px 0 #000,
+        -1px  1px 0 #000,
+         1px  1px 0 #000;
 }
 
 .hero h1 {
@@ -100,11 +105,10 @@ nav a:hover {
     border: 0;
 }
 #carrusel {
-    background-color: #5040e4;
-    max-width: 1000px;
-    margin: 50px auto;
+    background: linear-gradient(135deg, #FFB6C1, #A2C2FF); /* Degradado rosa a azul claro */
+    max-width: 100%;
+    margin: 20px auto;
     overflow: hidden;
-    background: linear-gradient(135deg, #ffffff, #e0e7ff);
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
@@ -209,7 +213,7 @@ footer {
     background-color: #222;
     color: #ccc;
     text-align: center;
-    padding: 20px 10px;
+    padding: 5px 5px;
     font-size: 0.9em;
 }
 
@@ -220,7 +224,7 @@ footer {
 }
 
 .buttons button {
-    background-color: #4CAF50;
+    background-color: #e7ecff;
     border: none;
     color: white;
     padding: 12px 20px;
@@ -232,5 +236,5 @@ footer {
 }
 
 .buttons button:hover {
-    background-color: #45a049;
+    background-color: #edcfec;
 }
