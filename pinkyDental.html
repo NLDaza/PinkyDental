@@ -6,17 +6,19 @@
     <title>Clinica dental: Pinky Dental</title>
     <link rel="stylesheet" href="estilos.css">
     <script src="webJS.js" defer></script>
+    <script src="estilosmovil.css" defer></script>
 </head>
 <body>
 
     <header>
-        <div class="logo"><a href="https://nldaza.github.io/PinkyDental/pinkyDental.html"><img src="img/Logo.PNG" alt="logo pinky dental" width="50%"></a></div>
+        <div class="logo"><a href="https://nldaza.github.io/PinkyDental/pinkyDental.html"><img src="img/Logo.PNG" alt="logo pinky dental" width="100%" height="140%"></a></div>
         <nav>
             <ul>
                 <li><a href="#" data-target="inicio">Inicio</a></li>
                 <li><a href="#" data-target="sobre">Sobre Nosotros</a></li>
                 <li><a href="#" data-target="servicios">Servicios</a></li>
                 <li><a href="#" data-target="contacto">Contacto</a></li>
+                <li><a href="#" data-target="opiniones">Opiniones</a></li>
                 <li><a href="#" data-target="location">Cómo llegar</a></li>
             </ul>
         </nav>
@@ -28,10 +30,14 @@
     </section>
     <section id="redes-sociales">
         <a href="https://www.instagram.com/explore/locations/843539495853287/pinky-dental-by-dra-melody-enriquez-landicho/" target="_blank" rel="noopener">
-            Instagram
+            <img src="img/icons8-instagram-100.png" alt="logo instagram" class="logopagina">Instagram
         </a>
         <a href="https://www.facebook.com/p/Pinky-Dental-By-Dra-Melody-Enriquez-Landicho-100054490988222/?locale=es_ES" target="_blank" rel="noopener">
-            Facebook
+            <img src="img/icons8-facebook-nuevo-64.png" alt="logo Facebook" class="logopagina">Facebook
+        </a>
+        <a href="https://maps.app.goo.gl/3ke28LqpE9jgZsrG9" target="_blank" rel="noopener">
+            <img src="img/icons8-logo-de-google-48.png" alt="logo Google" class="logopagina">
+            <span class="texto-con-borde">Google</span>
         </a>
     </section>
     
@@ -157,15 +163,28 @@
         </p>
     </section>
     <!--Añadir section con la zona opiniones-->
-    <section id="opiniones">
-        <p>Seccion de opiniones</p>
+    <section id="opiniones" class="section">
+        <h2>Opiniones de nuestros pacientes</h2>
+        <div class="opinion">
+            <p class="comentario">"La mejor experiencia que he tenido en una clínica dental. Trato amable, profesional y resultados excelentes."</p>
+            <p class="autor">– Laura M.</p>
+        </div>
+        <div class="opinion">
+            <p class="comentario">"Llevé a mi hijo por una revisión y salimos encantados. Muy buena atención con los niños."</p>
+            <p class="autor">– Carlos T.</p>
+        </div>
+        <div class="opinion">
+            <p class="comentario">"Instalaciones modernas, atención cercana y un tratamiento efectivo. 100% recomendable."</p>
+            <p class="autor">– Ana G.</p>
+        </div>
     </section>
+    
     <!--Añadir section con la zona Cómo llegar-->
     <section id="location">
         <div class="location-content">
             <h2>Cómo llegar</h2>
             <p>Estamos en C/ Pensamiento, 12. 28020 MADRID <br>
-                Tetuan, Línea 1, Salida: Algodonales
+                <img src="img/MetroMadridLogo.svg.png" alt="logo Metro Madrid" class="logopagina"> Tetuan, Línea 1, Salida: Algodonales
             </p>
             <iframe class="mapa"
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3035.7160579302126!2d-3.700670423417501!3d40.459421071432864!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd422906af531795%3A0xde9e9f52ee5cc54d!2sPinky%20Dental!5e0!3m2!1ses!2ses!4v1745673470470!5m2!1ses!2ses"

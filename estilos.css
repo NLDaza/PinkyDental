@@ -4,10 +4,13 @@ body {
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    background-color: #f9f9f9;
+    background-color: #edcfec;
+    background: linear-gradient(to right, #ffe6e6, #f3def2); /*Degradado*/
     color: #333;
 }
-
+h2 {
+   text-decoration: underline ;
+}
 /* Para controlar el scroll suave lo añadimos a todo el documento*/
 html {
     scroll-behavior: smooth;
@@ -28,6 +31,12 @@ header {
     font-size: 1.5em;
     font-weight: bold;
 }
+.logo img {
+    height: 50px;        /* Ajusta según el tamaño que desees */
+    width: auto;         /* Mantiene la proporción del logo */
+    object-fit: contain; /* Evita deformaciones si hay contenedor */
+    display: block;
+  }
 
 nav ul {
     list-style: none;
@@ -49,7 +58,7 @@ nav a:hover {
 
 /* Hero */
 .hero {
-    background: url('fondo1.PNG') no-repeat center center/cover;
+    background: url('/img/fondo1.PNG') no-repeat center center/cover;
     color: rgb(255, 255, 255);
     text-align: center;
     padding: 100px 20px;
@@ -146,6 +155,16 @@ nav a:hover {
     background-color: #E4405F; /* Color rosado para Instagram */
 }
 
+#redes-sociales a:nth-child(3) {
+    background-color: #ffffff; /* Google (rojo típico de Google My Business) */
+}
+/*Añadimos */
+.texto-con-borde {
+    color: rgb(129, 124, 124); /* O el color que uses en el fondo */
+
+    font-weight: bold;
+  }
+  
 #redes-sociales a:hover {
     opacity: 0.8;
 }
@@ -277,4 +296,49 @@ footer {
     padding: 15px;
   }
   
+  /*Seccion de opiniones*/
+
+  #opiniones {
+    background-color: #f7f7f7;
+    padding: 2rem;
+    border-top: 1px solid #ddd;
+}
+
+#opiniones h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.opinion {
+    background-color: #fff;
+    border-left: 4px solid #90caf9;
+    margin: 1rem auto;
+    padding: 1rem;
+    max-width: 600px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.opinion:hover {
+    transform: translateY(-3px);
+}
+
+.comentario {
+    font-style: italic;
+    color: #333;
+}
+
+.autor {
+    text-align: right;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #555;
+}
+
+.logopagina {
+    vertical-align: middle; /* Alinea el logo con el medio de la línea de texto */
+    height: 1.5em; /* Ajusta el tamaño del logo al tamaño de la letra */
+    width: auto; /* Mantiene la proporción del logo */
+    margin-right: 10px; /* Añade espacio entre el logo y el texto */
+}
   
