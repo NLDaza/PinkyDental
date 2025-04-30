@@ -22,38 +22,71 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = document.querySelectorAll('.slide').length;
     const prevBtn = document.getElementById('prevBtn');
     const nextBtn = document.getElementById('nextBtn');
+    const pauseBtn = document.getElementById('pauseBtn'); // El botón de pausa
+    let interval; // Variable para almacenar la función de intervalo
 
+    // Función para mover al siguiente slide
     function moveSlide() {
-        index++;
-        if (index >= totalSlides) {
+        index++; // Incrementa el índice del slide.
+        if (index >= totalSlides) { // Si el índice es mayor o igual al número total de slides, vuelve al primer slide (índice 0).
             index = 0;
         }
-        updateSlidePosition();
+        updateSlidePosition(); // Llama a la función para actualizar la posición del slide.
     }
 
+    // Función que actualiza la posición del carrusel moviendo el contenedor de los slides.
     function updateSlidePosition() {
-        slides.style.transform = `translateX(-${index * 100}%)`;
+        slides.style.transform = `translateX(-${index * 100}%)`; // Desplaza el contenedor de los slides para mostrar el slide correspondiente.
     }
 
+    // Función para mover al slide anterior
     function prevSlide() {
-        index--;
-        if (index < 0) {
+        index--; // Decrementa el índice del slide.
+        if (index < 0) { // Si el índice es menor que 0, vuelve al último slide (índice totalSlides - 1).
             index = totalSlides - 1;
         }
-        updateSlidePosition();
+        updateSlidePosition(); // Llama a la función para actualizar la posición del slide.
     }
 
+    // Función para mover al siguiente slide
     function nextSlide() {
-        moveSlide();
+        moveSlide(); // Llama a la función que incrementa el índice y mueve al siguiente slide.
     }
 
-    // Evento botones
+    // Función para iniciar el carrusel automático
+    function startAutoSlide() {
+        interval = setInterval(moveSlide, 5000); // Inicia el intervalo que mueve el slide cada 4 segundos
+        pauseBtn.textContent = '⏸'; // Cambia el texto del botón a 'Pausar'
+    }
+
+    // Función para detener el carrusel automático
+    function stopAutoSlide() {
+        clearInterval(interval); // Detiene el intervalo
+        pauseBtn.textContent = '▶'; // Cambia el texto del botón a 'Reanudar'
+    }
+
+    // Función que alterna entre pausar y reanudar
+    function togglePause() {
+        if (interval) {
+            stopAutoSlide(); // Si el carrusel está corriendo, lo pausamos
+        } else {
+            startAutoSlide(); // Si el carrusel está pausado, lo reanudamos
+        }
+    }
+
+    // Evento para el botón de retroceder (prev)
     prevBtn.addEventListener('click', prevSlide);
+
+    // Evento para el botón de avanzar (next)
     nextBtn.addEventListener('click', nextSlide);
 
-    // Automático cada 4 segundos
-    setInterval(moveSlide, 4000);
+    // Evento para el botón de pausa/reanudar
+    pauseBtn.addEventListener('click', togglePause);
+
+    // Inicia el carrusel automáticamente al cargar la página
+    startAutoSlide();
 });
+
 
 //Para desplegar los servicios:
 document.querySelectorAll('.titulo-servicio').forEach(boton => {
@@ -87,4 +120,14 @@ document.querySelectorAll('nav a[data-target]').forEach(enlace => {
             seccion.scrollIntoView({ behavior: 'smooth' });
         }
     });
+});
+
+//Menu desplegable
+// Obtén los elementos del DOM
+const menuToggle = document.getElementById('menu-toggle');
+const menu = document.querySelector('nav ul');
+
+// Añadir el evento para alternar el menú
+menuToggle.addEventListener('click', () => {
+    menu.classList.toggle('active');
 });
