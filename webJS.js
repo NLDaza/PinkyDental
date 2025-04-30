@@ -55,3 +55,36 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(moveSlide, 4000);
 });
 
+//Para desplegar los servicios:
+document.querySelectorAll('.titulo-servicio').forEach(boton => {
+    boton.addEventListener('click', () => {
+      const item = boton.parentElement;
+      const contenido = item.querySelector('.contenido-servicio');
+  
+      const abierto = item.classList.contains('active');
+  
+      // Cerrar todos los demás
+      document.querySelectorAll('.item').forEach(i => {
+        i.classList.remove('active');
+        i.querySelector('.contenido-servicio').style.maxHeight = null;
+      });
+  
+      // Si no estaba abierto, abrirlo
+      if (!abierto) {
+        item.classList.add('active');
+        contenido.style.maxHeight = contenido.scrollHeight + "px";
+      }
+    });
+  });
+  
+  // Navegación suave (desde el header) sin modificar historial, se hace la sustitucion del href por el data-target.
+document.querySelectorAll('nav a[data-target]').forEach(enlace => {
+    enlace.addEventListener('click', function(e) {
+        e.preventDefault();
+        const targetId = this.getAttribute('data-target');
+        const seccion = document.getElementById(targetId);
+        if (seccion) {
+            seccion.scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+});

@@ -77,33 +77,7 @@ nav a:hover {
     background-color: #fff;
     margin: 20px 0;
 }
-#location {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0;
-}
 
-.location-content {
-    display: flex;
-    flex-direction: column; /* O puedes usar row si quieres al lado */
-    align-items: center; /* Centrar en vertical */
-    justify-content: center; /* Centrar en horizontal */
-    gap: 20px; /* Espacio entre el texto y el mapa */
-  }
-  
-  .location-content h2 {
-    font-size: 2rem; /* Tamaño bonito para el título */
-    margin: 0;
-  }
-  
-/* Estilo para el mapa (iframe) */
-.mapa {
-    width: 100%;  /* Hacemos el iframe más flexible */
-    max-width: 900px; /* Limitar el tamaño máximo */
-    height: 450px;
-    border: 0;
-}
 #carrusel {
     background: linear-gradient(135deg, #FFB6C1, #A2C2FF); /* Degradado rosa a azul claro */
     max-width: 100%;
@@ -208,6 +182,34 @@ nav a:hover {
     font-weight: bold;
 }
 
+/*Cómo llegar*/
+#location {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.location-content {
+    display: flex;
+    flex-direction: column; /* O puedes usar row si quieres al lado */
+    align-items: center; /* Centrar en vertical */
+    justify-content: center; /* Centrar en horizontal */
+    gap: 20px; /* Espacio entre el texto y el mapa */
+  }
+  
+  .location-content h2 {
+    font-size: 2rem; /* Tamaño bonito para el título */
+    margin: 0;
+  }
+  
+/* Estilo para el mapa (iframe) */
+.mapa {
+    width: 100%;  /* Hacemos el iframe más flexible */
+    max-width: 900px; /* Limitar el tamaño máximo */
+    height: 450px;
+    border: 0;
+}
 /* Pie de página */
 footer {
     background-color: #222;
@@ -238,3 +240,41 @@ footer {
 .buttons button:hover {
     background-color: #edcfec;
 }
+
+/*Añadido el efecto Acordeon en la seccion de Servicios*/
+.acordeon .item {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 5px;
+  }
+  
+  .titulo-servicio {
+    background-color: #f8f9fa;
+    color: #333;
+    border: none;
+    width: 100%;
+    padding: 15px;
+    text-align: left;
+    font-size: 1.1em;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  .titulo-servicio:hover {
+    background-color: #e0e7ff;
+  }
+  
+  .contenido-servicio {
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 15px;
+    background-color: #ffffff;
+    border-left: 4px solid #5c7cfa;
+    transition: max-height 0.4s ease, padding 0.4s ease;
+  }
+  
+  .item.active .contenido-servicio {
+    max-height: 500px; /* valor suficiente para el contenido */
+    padding: 15px;
+  }
+  
+  
